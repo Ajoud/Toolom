@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2b9348;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 28px;
+            background-color: #2b9348;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #238b3e;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Einführung in das Szenario</h1>
+    <p>
+        Im Rahmen eines wissenschaftlichen Experiments versetzen Sie sich in eine typische Alltagssituation:
+        Sie befinden sich mitten in einer Renovierung und stellen fest, dass Ihnen eine geeignete Bohrmaschine fehlt,
+        um Ihre Arbeit zu beginnen. <br><br>
+        Im Folgenden erhalten Sie Zugriff auf eine fiktive Online-Plattform, die den Ablauf einer typischen Produktsuche simuliert
+        und Ihnen entsprechend der beschriebenen Situation passende Produkte anzeigt. <br>
+        Bitte versetzen Sie sich in die beschriebene Alltagssituation hinein und verwenden Sie die Plattform so, wie Sie es auch im Alltag tun würden. <br> <br>
+        <em>Geschätzte Dauer des Experiments: ca. 5 Minuten</em> <br><br>
+        <strong>Hinweis:</strong> Es handelt sich um ein wissenschaftliches Experiment im Rahmen einer Bachelorarbeit.
+        Alle Inhalte und Abläufe sind simuliert, somit erfolgt kein realer Kauf oder Verleih.
+        Es werden keine personenbezogenen Daten gespeichert.
+    </p>
+
+    <button onclick="startExperiment()">Experiment starten</button>
+</div>
+
+<script>
+    function startExperiment() {
+        window.location.href = "Toolom.html";
+    }
+</script>
+</body>
+</html>
