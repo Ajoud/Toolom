@@ -46,7 +46,7 @@
 
         th, td {
             text-align: center;
-            padding: 10px;
+            padding: 8px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -118,7 +118,15 @@
     <table id="likertTable">
         <thead>
         <tr>
-            <th style="text-align:left;"></th>
+            <th></th>
+            <th style="font-size: 12px;">Stimme gar nicht zu</th>
+            <th style="font-size: 12px;">Stimme nicht zu</th>
+            <th style="font-size: 12px;">Neutral</th>
+            <th style="font-size: 12px;">Stimme zu</th>
+            <th style="font-size: 12px;">Stimme voll und ganz zu</th>
+        </tr>
+        <tr>
+            <th></th>
             <th>1</th>
             <th>2</th>
             <th>3</th>
@@ -126,6 +134,7 @@
             <th>5</th>
         </tr>
         </thead>
+
         <tbody id="likertBody"></tbody>
     </table>
 
@@ -150,7 +159,7 @@
 
         // Usefulness (11–17)
         { text: "Ich glaube, dass die Vorauswahlfrage für mich einen gewissen Wert hatte.", name: "use_1" },
-        { text: "Ich denke, die Frage hat mir geholfen, nachhaltiger zu entscheiden.", name: "use_2" },
+        { text: "Ich denke, dass Frage mir geholfen hat, nachhaltiger zu entscheiden.", name: "use_2" },
         { text: "Ich finde es sinnvoll, solche Fragen vor einer Entscheidung zu stellen, weil sie zum Nachdenken anregen.", name: "use_3" },
         { text: "Ich würde mich wieder mit so einer Frage beschäftigen, weil sie mir etwas gebracht hat.", name: "use_4" },
         { text: "Ich glaube, dass mir die Frage geholfen hat, umweltfreundlichere Optionen in Betracht zu ziehen.", name: "use_5" },
