@@ -206,6 +206,7 @@
         }
     </style>
 </head>
+
 <body>
 <header class="site-header">
     <div class="site-title">🛠️  Toolom – Werkzeuge mieten & kaufen</div>
@@ -254,8 +255,6 @@
     <button class="button" onclick="goToSurvey()">Fragebogen öffnen</button>
 </div>
 
-
-
 <div class="wrapper hidden" id="mainContent">
     <div class="products">
         <img id="ecoBadge" src="badge.jpg" alt="Badge" style="position: absolute; top: 10px; left: 10px; width: 50px; display: none;" />
@@ -303,14 +302,13 @@
             <div class="info-box hidden" id="sharedBox">
                 <strong>💡 Wie funktioniert das Leihen?</strong> <br>
                 <p>
-                    Beim Leihen wird eine Kaution in Höhe von 60 € hinterlegt, die nach Rückgabe vollständig zurückerstattet wird,
+                    Beim Leihen wird eine Kaution in Höhe von 60 € hinterlegt, die nach Rückgabe vollständig zurückerstattet wird,
                     sofern das Gerät unbeschädigt ist. Die Rückgabe erfolgt entweder postalisch oder direkt vor Ort.
-                    Die Mietkosten (z. B. 13 €/Tag) werden nach der Rückgabe basierend
+                    Die Mietkosten (z. B. 13 €/Tag) werden nach der Rückgabe basierend
                     auf der Anzahl der Tage berechnet. Es entstehen keine weiteren Verpflichtungen. <br><br>
                     Dieses Verfahren ist typisch für Shared Economy: Produkte werden gemeinsam genutzt, um Ressourcen zu schonen und
                     unnötige Anschaffungen zu vermeiden.
                 </p>
-
             </div>
         </div>
     </div>
@@ -318,7 +316,6 @@
 
 <script>
     let selectedProduct = null;
-
     if (!localStorage.getItem("userId")) {
         const id = "user_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
         localStorage.setItem("userId", id);
@@ -357,7 +354,6 @@
         updateEcoBadgeVisibility();
     }
 
-
     function selectProduct(element, name, imgSrc) {
         document.querySelectorAll(".product").forEach(p => p.classList.remove("selected"));
         element.classList.add("selected");
@@ -380,7 +376,6 @@
         document.querySelector(".checkout").disabled = true;
         document.getElementById("decisionSelect").value = "";
     }
-
 
     function clearSelection() {
         document.querySelectorAll(".product").forEach(p => p.classList.remove("selected"));
@@ -412,7 +407,6 @@
     function goToSurvey() {
         window.location.href = "Fragebogen.html";
     }
-
 
     function startConfetti() {
         const canvas = document.getElementById("confettiCanvas");
@@ -463,8 +457,6 @@
     //NO NUDGE
     */
 
-
 </script>
-
 </body>
 </html>
