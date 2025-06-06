@@ -34,6 +34,7 @@
         }
 
         .products {
+            position: relative;
             flex: 2;
             background: #fff;
             border-radius: 12px;
@@ -236,16 +237,28 @@
 <div id="addressForm" class="form-popup hidden">
     <h2>Lieferdetails</h2>
     <p>Diese Angaben sind freiwillig und werden <strong>nicht gespeichert</strong>.<br>
-        Sie können die Felder auch <strong>leer</strong> lassen und trotzdem fortfahren.</p>
-    <input type="text" placeholder="Name"><br>
-    <input type="text" placeholder="Straße"><br>
-    <input type="text" placeholder="Ort"><br>
+        Sie können die Felder auch leer lassen und trotzdem fortfahren.</p>
+    <input type="text" value="Max Mustermann" placeholder="Name"><br>
+    <input type="text" value="Musterstraße 1" placeholder="Straße"><br>
+    <input type="text" value="123 Musterstadt" placeholder="Ort"><br>
+
     <button class="button" onclick="submitDecision()">Bestätigen & Weiter</button>
 </div>
+
+<div id="finalConfirmation" class="popup hidden">
+    <h2>Vielen Dank!</h2>
+    <p>Sie haben das Produkt erfolgreich ausgewählt.<br>
+        Das Experiment ist nun abgeschlossen.<br><br>
+        Bitte füllen Sie nun den folgenden Fragebogen aus.
+    </p>
+    <button class="button" onclick="goToSurvey()">Fragebogen öffnen</button>
+</div>
+
 
 
 <div class="wrapper hidden" id="mainContent">
     <div class="products">
+        <img id="ecoBadge" src="badge.jpg" alt="Badge" style="position: absolute; top: 10px; left: 10px; width: 50px; display: none;" />
         <h2>🔧 Verfügbare Bohrmaschinen</h2>
         <div class="product-grid" id="productGrid">
             <div class="product" onclick="selectProduct(this, 'Schwarze', 'schwarz.jpg')">
@@ -335,12 +348,15 @@
     function closeBadge() {
         document.getElementById("successBadge").classList.add("hidden");
         document.getElementById("mainContent").classList.remove("hidden");
+        updateEcoBadgeVisibility();
     }
 
     function closeInfoSaved() {
         document.getElementById("infoSavedBadge").classList.add("hidden");
         document.getElementById("mainContent").classList.remove("hidden");
+        updateEcoBadgeVisibility();
     }
+
 
     function selectProduct(element, name, imgSrc) {
         document.querySelectorAll(".product").forEach(p => p.classList.remove("selected"));
@@ -389,8 +405,14 @@
     function submitDecision() {
         const decision = document.getElementById("decisionSelect").value;
         localStorage.setItem("decision", decision);
+        document.getElementById("addressForm").classList.add("hidden");
+        document.getElementById("finalConfirmation").classList.remove("hidden");
+    }
+
+    function goToSurvey() {
         window.location.href = "Fragebogen.html";
     }
+
 
     function startConfetti() {
         const canvas = document.getElementById("confettiCanvas");
@@ -421,6 +443,27 @@
         }
         setInterval(draw, 30);
     }
+    window.addEventListener("DOMContentLoaded", updateEcoBadgeVisibility);
+    function updateEcoBadgeVisibility() {
+        const committed = localStorage.getItem("committed");
+        const badge = document.getElementById("ecoBadge");
+        if (badge) {
+            badge.style.display = (committed === "Ja") ? "block" : "none";
+        }
+    }
+
+    /*
+    //NO NUDGE
+    function updateEcoBadgeVisibility() {
+        const badge = document.getElementById("ecoBadge");
+        if (badge) {
+            badge.style.display = "none";
+        }
+    }
+    //NO NUDGE
+    */
+
+
 </script>
 
 </body>
