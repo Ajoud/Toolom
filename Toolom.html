@@ -321,6 +321,7 @@
         localStorage.setItem("userId", id);
     }
 
+        /*
     function handleNudge(accepted) {
         document.getElementById("nudgePopup").classList.add("hidden");
         localStorage.setItem("committed", accepted ? "Ja" : "Nein");
@@ -331,8 +332,10 @@
             document.getElementById("infoSavedBadge").classList.remove("hidden");
         }
     }
-
-    /*
+    */
+   
+    // /*
+    
     //NO NUDGE
     function handleNudge(accepted) {
         document.getElementById("nudgePopup").classList.add("hidden");
@@ -340,7 +343,7 @@
         document.getElementById("infoSavedBadge").classList.remove("hidden");
     }
     //NO NUDGE
-    */
+    // */
 
     function closeBadge() {
         document.getElementById("successBadge").classList.add("hidden");
@@ -438,6 +441,8 @@
         setInterval(draw, 30);
     }
     window.addEventListener("DOMContentLoaded", updateEcoBadgeVisibility);
+
+    /*
     function updateEcoBadgeVisibility() {
         const committed = localStorage.getItem("committed");
         const badge = document.getElementById("ecoBadge");
@@ -445,8 +450,9 @@
             badge.style.display = (committed === "Ja") ? "block" : "none";
         }
     }
+    */
 
-    /*
+    // /*
     //NO NUDGE
     function updateEcoBadgeVisibility() {
         const badge = document.getElementById("ecoBadge");
@@ -455,7 +461,7 @@
         }
     }
     //NO NUDGE
-    */
+   // */
 
 </script>
 </body>
