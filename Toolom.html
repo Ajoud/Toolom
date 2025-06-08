@@ -321,7 +321,6 @@
         localStorage.setItem("userId", id);
     }
 
-        /*
     function handleNudge(accepted) {
         document.getElementById("nudgePopup").classList.add("hidden");
         localStorage.setItem("committed", accepted ? "Ja" : "Nein");
@@ -332,18 +331,16 @@
             document.getElementById("infoSavedBadge").classList.remove("hidden");
         }
     }
-    */
    
-    // /*
-    
-    //NO NUDGE
+    /*
+    //NO Gamification
     function handleNudge(accepted) {
         document.getElementById("nudgePopup").classList.add("hidden");
         localStorage.setItem("committed", accepted ? "Ja" : "Nein");
         document.getElementById("infoSavedBadge").classList.remove("hidden");
     }
-    //NO NUDGE
-    // */
+    //NO Gamification
+    */
 
     function closeBadge() {
         document.getElementById("successBadge").classList.add("hidden");
@@ -442,7 +439,6 @@
     }
     window.addEventListener("DOMContentLoaded", updateEcoBadgeVisibility);
 
-    /*
     function updateEcoBadgeVisibility() {
         const committed = localStorage.getItem("committed");
         const badge = document.getElementById("ecoBadge");
@@ -450,18 +446,17 @@
             badge.style.display = (committed === "Ja") ? "block" : "none";
         }
     }
-    */
 
-    // /*
-    //NO NUDGE
+    /*
+    //NO Gamification
     function updateEcoBadgeVisibility() {
         const badge = document.getElementById("ecoBadge");
         if (badge) {
             badge.style.display = "none";
         }
     }
-    //NO NUDGE
-   // */
+    //NO Gamification
+   */
 
 </script>
 </body>
